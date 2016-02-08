@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddItem</title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/EditItem.js"></script>    
+</head>
+<body>
+    <div ng-controller="EditItemController">
+        <p><b>Ürün Adı:</b></p>       
+        <input type="text" ng-model="EditedItem.Name" id="Name" /><br />
+        <p><b>Fiyat(TL):</b></p>
+        <input type="text" ng-model="EditedItem.Price" id="Price" />
+        <input type="button" ng-click="UpdateItem()" value="Kaydet" />        
+        <input type="hidden" value="@ViewBag.ProductID" id="hdnProductID" />
+        <input type="hidden" value="@ViewBag.Id" id="hdnItemID" />
+    </div>
+</body>
+</html>
